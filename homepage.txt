@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TRAVEL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f5f5f5;
+    font-family: arial;
+}
+header {
+    background: #673AB7;
+    width: 100%;
+    float: left;
+    box-shadow: 0px 0px 15px #777;
+    height: 100px;
+}
+.wrapper {
+    max-width: 1200px;
+    padding: 0px 20px;
+    margin: auto;
+}
+.logo {
+    float: left;
+    margin:  10px;
+    max-width: 200px;
+}
+.logo img{
+    max-width: 60%;
+}
+.nav-menus {
+    float: right;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+}
+.nav-menus li {
+    list-style: none;
+    position: relative;
+    padding: 30px 0px;
+}
+.nav-menus a {
+    color: #fff;
+    position: relative;
+    font-size: 17px;
+    text-decoration: none;
+    padding: 15px 12px;
+    z-index: 1;
+}
+.nav-menus li:hover {
+    color: #fff;
+}
+.nav-menus a:after {
+    content: "";
+    width: 100%;
+    height: 0px;
+    background-color: #5a30a5;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 4px;
+    transition: 0.5s;
+    z-index: -1;
+}
+.nav-menus li:hover > a:after{
+    height: 100%;
+}
+.nav-menus i{
+    margin-right: 8px;
+    font-size: 16px;
+}
+.toggle-btn{
+    float: right;
+    height: 90px;
+    line-height: 90px;
+    color: #fff;
+    font-size: 26px;
+    display: none;
+    cursor: pointer;
+}
+.nav-menus.active{
+    display: block;
+}
+.sub-menus ul {
+    position: absolute;
+    top: 80px;
+    background-color: #fff;
+    padding: 5px 0px;
+    min-width: 150px;
+    box-shadow: 0px 0px 8px #636363;
+    border-radius: 4px;
+    display: none;
+}
+.sub-menus:hover ul {
+    display: block;
+}
+.sub-menus ul li {
+    padding: 5px 0px;
+}
+.sub-menus ul li a {
+    padding: 8px 10px;
+    display: block;
+    color: #5a30a5;
+}
+.sub-menus ul li:hover a {
+    color: #fff;
+}
+.sub-menus ul::before {
+    content: "";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    position: absolute;
+    top: -9px;
+}
+@media (max-width:767px) {
+.toggle-btn{
+    display: block;
+}
+.nav-menus {
+    position:absolute;
+    width: 50%;
+    background: #4e2890;
+    top: 100px;
+    right: 0;
+    display: none;
+    padding: 0px 15px;
+    box-sizing: border-box;
+}
+.nav-menus::before{
+    content: "";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #4e2890;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+}
+.sub-menus ul {
+    position: static;
+}
+.sub-menus ul::before {
+    display: none;
+}
+.nav-menus li {
+    padding: 0px;
+}
+.nav-menus li a {
+    display: block;
+    margin: 15px 0px;
+}
+}
+article {
+    width: 100%; 
+    min-height: 500px;
+    background-image: url("images/IMAGE.jpg");
+    background-repeat: no-repeat;
+    margin-bottom: 15px;
+    background-size: cover;
+  }
+  main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+  }
+  section h3{
+    margin-top: 90px;
+    font-size: 35px;
+    font-weight: 200;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 2px black; 
+  }
+  section h1{
+    margin: 30px 0 20px 0;
+    font-size: 55px;
+    font-weight: 700;
+    text-shadow: 2px 1px 5px black;
+    text-transform: uppercase;
+  }
+  section p{
+    font-size: 25px;
+    word-spacing: 2px;
+    margin-bottom: 25px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+  
+.change_content:after{
+    content: '';
+    animation: changetext 10s infinite linear;
+    color: black;
+  }
+  @keyframes changetext{
+    0%{ content:"Darjeeling";}
+    20%{ content:"Agra";}
+    35%{ content:"Jaipur";}
+    60%{ content:"Kerala";}
+    80%{ content:"Delhi";}
+    100%{ content:"Mumbai";}
+    }
+  }
+  .row {
+  margin: 8px -16px;
+}
+.row,
+.row > .column {
+  padding: 8px;
+}
+.column {
+  float: left;
+  width: 25%;
+   margin: 10px auto;
+   margin-left: 70px;
+   margin-right: 40px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.content {
+  background-color: white;
+  padding: 10px;
+}
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+   
+  }
+}
+.bann{
+  width: 90%;
+  height: 520px;
+  background: #fafafa;
+  margin: 50px auto;
+  display: flex;
+  justify-content: left;
+}
+.bann div {
+  width: 30%;
+  height: 50%;
+  align-self: center;
+  text-align: justify;
+  padding: 2%;
+}
+.bann video{
+  width: 70%;
+}
+
+row1 {
+  margin: 8px -16px;
+}
+.row1,
+.row1 > .column1 {
+  padding: 10px;
+}
+.column1 {
+  float: left;
+  width: 30%;
+  margin-left: 40px;
+}
+.row1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.content {
+  background-color: white;
+  padding: 10px;
+}
+@media screen and (max-width: 900px) {
+  .column1 {
+    width: 50%;
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .column1 {
+    width: 100%;
+  }
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    }
+    @media (max-height:800px){
+   footer { position: static; }
+   }
+   .footer-distributed{
+    background-color: #2c292f;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 10px 10px 20px 10px;
+    margin-top: 50px;
+  }
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+  display: inline-block;
+  vertical-align: top;
+  }
+.footer-distributed .footer-left{
+  width: 30%;
+}
+.footer-distributed h3{
+  color:  #ffffff;
+  font: normal 36px Times New Roman;
+  margin: 0;
+}
+.footer-distributed .footer-left img{
+  width: 30%;
+}
+.footer-distributed h3 span{
+  color:  #e0ac1c;
+}
+.footer-distributed .footer-links{
+  color:  #ffffff;
+  margin: 20px 0 12px;
+}
+.footer-distributed .footer-links a{
+  display:inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color:  inherit;
+}
+.footer-distributed .footer-company-name{
+  color:  #8f9296;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+.footer-distributed .footer-center{
+  width: 35%;
+}
+.footer-distributed .footer-center i{
+  background-color:  #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+.footer-distributed .footer-center i.fa-envelope{
+  font-size: 17px;
+  line-height: 38px;
+}
+.footer-distributed .footer-center p{
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  margin:0;
+}
+.footer-distributed .footer-center p span{
+  display:block;
+  font-weight: normal;
+  font-size:14px;
+  line-height:2;
+}
+.footer-distributed .footer-center p a{
+  color:  #e0ac1c;
+  text-decoration: none;
+}
+.footer-distributed .footer-right{
+  width: 30%;
+}
+.footer-distributed .footer-company-about{
+  line-height: 20px;
+  color:  #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+.footer-distributed .footer-company-about span{
+  display: block;
+  color:  #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.footer-distributed .footer-icons{
+  margin-top: 25px;
+}
+.footer-distributed .footer-icons a{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color:  #33383b;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+@media (max-width: 880px) {
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .footer-distributed .footer-center i{
+    margin-left: 0;
+  }
+  p{
+      margin: 0;
+      padding: 0;
+      margin: 20px 0 0 0;
+      font-size: 2vw;
+     }
+}
+</style>
+</head>
+<body>
+<header>
+    
+    <div class="wrapper">
+        <a href="#" class="logo"><img src="images/main.jpg" alt=""></a>
+        <i class="toggle-btn fas fa-bars"></i>
+        <nav class="nav-menus">
+            <li><a style="background: red" href="homepage.html"><i class="fas fa-home"></i> HOME</a></li>
+            <li><a href="places.html"><i class="fas fa-align-left"></i> PLACES TO VISIT</a></li>
+            <li class="sub-menus"><a href="#"><i class="fas fa-chevron-circle-down"></i> TOURS BY DURATION</a>
+                <ul>
+                    <li><a href="tour.html"><i class="fas fa-shuttle-van"></i> 2-5 Days tour</a></li>
+                    <li><a href="tour2.html"><i class="fas fa-bus"></i> 6-10 Days tour</a></li>
+                    <li><a href="tour3.html"><i class="fas fa-bus-alt"></i> 11-15 Days tour</a></li>
+                </ul>
+            </li>
+            <li><a href="package.html"><i class="fas fa-atlas"></i> PACKAGE</a></li>
+            <li><a href="contact.html"><i class="fas fa-phone-alt"></i> CONTACT US</a></li>
+        </nav>
+    </div>
+     
+    <script type="text/javascript">
+    $(".toggle-btn").click(function(){
+        $(this).toggleClass("fa-times");
+        $(".nav-menus").toggleClass("active");
+    });
+</script>
+</header>
+<main>
+    <article>
+      <section>
+            <h3>Welcome To India</h3>
+             <h1> DO COME & VISIT <span class="change_content"> </span></h1>
+              <p> "India once is not enough"</p>
+            
+           </section>
+         </main>
+    </article>
+    <div class="row">
+  <div class="column">
+    <div class="content">
+      <img src="images/111.jpg" alt="Mountains" style="width:80%">
+      <h3 style="margin-top: 10px;">Town</h3>
+      <p style="margin-top: 10px;">India, a census <b>town</b> is one which is not statutorily notified and administered as a <b>town,
+                </b> but nevertheless whose population has attained urban characteristics.</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+    <img src="images/img51.jpg" alt="Lights" style="width:70%">
+      <h3 style="margin-top: 10px;">Relaxing</h3>
+      <p style="margin-top: 10px;"><b>India</b> has a vast collection of exciting destinations to take a break from the regular life and spend some <b>quality time with your colleagues, friends, and family members.</b> </p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+    <img src="images/img12.jpg" alt="Nature" style="width:80%">
+      <h3 style="margin-top: 10px;">Welcome</h3>
+      <p style="margin-top: 10px;"><b>India</b> is one of the largest and most populous countries in the world. It is an ideal destination for frequent travelers due to its large geographic expanse consisting of <b>diverse cultures, wildlife, and landscapes.</b></p>
+    </div>
+  </div>
+</div>
+   <div class="row">
+  <div class="column">
+    <div class="content">
+    <img src="images/IMAGE.jpg" alt="Mountains" style="width: 80%">
+      <h3 style="margin-top: 10px;">Village</h3>
+      <p style="margin-top: 10px;">Our country <b>India</b> leaves travelers mesmerized with astounding vistas, stunning landscapes, and a culture that is all colorful and truly captivating. But since a major part of our population resides in the <b>villages</b>, it’s equally important to explore rural India alongside the commonly visited tourist 
+                  <b>destinations of India.</b></p>
+    </div>
+  </div>
+
+   <div class="column">
+    <div class="content">
+    <img src="images/img78.jpg" alt="Mountains" style="width:80%">
+      <h3 style="margin-top: 10px;">Mountain</h3>
+      <p style="margin-top: 10px;">Stok Range in Ladakh is considered to be one of the most beautiful places in India. The <b>mountain</b> range that runs across north India, Stok Range is a beautiful contrast of Brown Pointy Mountain ranges and ethereal white snow-capped Himalayas.</p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="content">
+    <img src="images/img25.jpg" alt="Mountains" style="width:80%">
+      <h3 style="margin-top: 10px;">Trek</h3>
+      <p style="margin-top: 10px;"><b>Trekking</b> in India does not require any official introduction since there are zillions of people do trekking every other day in India, regardless of time. The unique geographical features of India help 
+                  <b>trekking</b> grow from height to height.</p>
+    </div>
+  </div>
+
+</div>
+          <div class="bann">
+              <video src="images/video5.mp4" controls muted></video>
+              <div>
+                <h3 style="margin-top: 40px;">All Time Favourite Places</h3>
+                
+                <p style="margin-top: 10px;" >The main reason why <b>India</b> is famous for <b>tourism</b> means all type of tourist destinations in one place. <b>India</b> is the right place for wild safaris, desert safaris, nature seeking places, honeymoon spot, <b>adventurous activities</b>, spiritual places, and <b>historical places</b> of India.</p>
+            </div>
+              </div>
+            </div>
+            
+            <div class="row1">
+  <div class="column1">
+    <div class="content">
+      <img src="images/imgg2.jpg" alt="Mountains" style="width:100%">
+     <h3 style="font-weight: bold;" >Top Destination</h3>
+                <p style="margin-top: 10px;">Diverse and Colorful Geography. <b>India</b> offers its <b>tourists</b> the highest mountains, the deepest ravines and valleys, wide deserts, white sand beaches, reefs, archipelagos, coasts, dense forests, dry plains, productive farmlands, flowing rivers, and many other natural wonders. </p>
+                </div>
+               </div>
+
+         <div class="column1">
+    <div class="content">
+    <img src="images/img34.jpg" alt="Lights" style="width:100%">
+      <h3 style="font-weight: bold;" >Top Adventure</h3>
+                <p style="margin-top: 10px;">This may include activities such as <b>mountaineering</b>, trekking, bungee jumping, mountain biking, cycling, canoeing, scuba diving, rafting, kayaking, zip-lining, paragliding, hiking, exploring, canyoneering, sandboarding, caving and <b>rock climbing</b>. Some obscure forms of adventure travel include disaster and ghetto tourism. </p>
+                </div>
+               </div>
+               <div class="column1">
+    <div class="content">
+    <img src="images/img27.jpg" alt="Nature" style="width:100%"> 
+    <h3 style="font-weight: bold;" >Top National Festival</h3>
+                <p style="margin-top: 10px;"><b>Festivals</b> are a great way to break away from the mundane and discover the true beauty of India that lies in its cultural heritage, spirituality and interesting folklores.</p>
+                </div>
+               </div>
+           </div>
+           <footer class="footer-distributed">
+     <div class="footer-left">
+          <img src="images/main.jpg">
+        <h3>India<span>Tourism</span></h3>
+       <p class="footer-links">
+          <a href="#">Home</a>
+          |
+          <a href="#">Package</a>
+          |
+          <a href="#">Tour Theme</a>
+          |
+          <a href="#">Contact Us</a>
+         </p>
+       <p class="footer-company-name">© 2019 indian Tourism Solutions Pvt. Ltd.</p>
+      </div>
+
+      <div class="footer-center">
+        <div>
+          <i class="fa fa-map-marker"></i>
+            <p><span>510 - Mona Solitaire,
+             Bldg. No. A - 1, Sector - 1</span>
+            Mahape, Navi Mumbai - 400710</p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p><span>+91 22-27782183</span></p>
+        </div>
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><span><a href="mailto:info@theindiatourism.com">info@theindiatourism.com</a></span></p>
+        </div>
+      </div>
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>About US</span>
+          The India Tourism makes you explore the true beauty of India with its variety of tour packages that are specially designed to meet the preferences of all the tourists. Special tour packages are offered on the basic of duration so that you don't have to make any changes in your vacation tour. we aspire to provide you an memorable experience.</p>
+        <div class="footer-icons">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-youtube"></i></a>
+        </div>
+      </div>
+  </footer>
+</body>
+</html>
